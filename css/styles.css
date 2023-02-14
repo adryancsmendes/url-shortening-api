@@ -1,3 +1,21 @@
-
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* body {
+  min-height: 100vh;
+}
+* body p {
+  font-size: 1.125rem;
+}
+* body a {
+  color: #3b3054;
+  text-decoration: none;
+}
+* body a:hover {
+  transition: 0.4s;
+}
 
 /*# sourceMappingURL=styles.css.map */
