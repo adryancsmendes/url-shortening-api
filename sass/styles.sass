@@ -14,8 +14,557 @@
             font-size: 1.125rem
 
         a
-            color: variables.$dark-violet
+            color: variables.$white
             text-decoration: none
 
             &:hover
                 transition: .4s
+                color: variables.$cyan
+
+        .container
+            @include mixins.container
+            position: relative
+            
+            .header
+                width: 100%
+                position: fixed
+                z-index: 999
+                max-width: variables.$container-width
+
+                
+                &-nav
+                    padding: 3rem 1.5rem 0.5rem
+                    
+
+                    @include mixins.medium-devices
+                        display: flex
+                        justify-content: space-between
+                        padding: 4rem 2rem 0.5rem
+
+                    @include mixins.large-devices
+                        padding: 4rem 3rem 0.5rem
+
+                    @include mixins.extra-large-devices
+                        padding: 4rem 5rem 0.5rem
+
+                    @include mixins.extra-extra-large-devices
+                        padding: 4rem 10rem 0.5rem
+
+                    &-logo
+                        margin-bottom: 1rem
+                        @include mixins.flex-center
+                        justify-content: space-between
+
+                        a
+                            max-width: 8rem
+                            display: flex
+                            align-item: center
+
+                            @include mixins.tablet-devices
+                                max-width: 10rem
+                            
+                            img:first-child
+                                width: 100%
+                                height: auto
+
+                        #menu-hamburguer
+                            filter: invert(0.5)
+
+                            &:hover
+                                cursor: pointer
+
+                            @include mixins.medium-devices
+                                display: none
+                    
+                                           
+                    &-list
+                        width: 100%
+                        background: variables.$dark-violet
+                        font-size: 1rem
+                        list-style: none
+                        @include mixins.flex-center
+                        flex-direction: column
+                        transform: translateY(-400px)
+                        border-radius: 1rem
+                        
+                        @include mixins.tablet-devices
+                            font-size: 1.5rem
+
+                        @include mixins.medium-devices
+                            transform: none
+                            position: initial
+                            flex-direction: row
+                            font-size: 0.8rem
+                            font-weight: bold
+                            width: 100%
+                            max-width: 28rem
+                            gap: 1rem
+                            background: none
+
+                        
+
+                            @include mixins.firefox-style
+                                gap: 0
+                                justify-content: space-between
+                                max-width: 23rem
+
+                        
+
+                        @include mixins.large-devices
+                            font-size: 1rem
+                            max-width: 28rem
+
+                            @include mixins.firefox-style
+                                max-width: 30rem
+
+
+                        @include mixins.extra-large-devices
+                            max-width: 28rem
+
+
+
+                            
+
+                        li
+                            width: 100%
+                            text-align: center
+                            @include mixins.medium-devices
+                                position: relative
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                transition: .4s
+
+                                @include mixins.hover-menu-item(1.2rem,50%)
+                                    
+                                @include mixins.firefox-style
+                                    @include mixins.hover-menu-item(1.2rem,50%)
+                                    
+                            
+                            &:nth-child(6)
+                            
+                                    a
+                                        max-width: 30%
+                                        @include mixins.standard-button
+                                        
+                                        
+
+                                        @include mixins.medium-devices
+                                            max-width: 100%
+                                            padding: 0.3rem
+                                            border-radius: 1rem
+
+                            @include mixins.medium-devices
+                                @include mixins.hover-menu-item(0,0)    
+
+                            a
+                                color: variables.$gray
+                                font-weight: bold
+                                @include mixins.firefox-style
+                                    max-width: 2rem
+
+                                @include mixins.medium-devices
+                                    &::first-letter
+                                        text-transform: uppercase
+
+                                &:hover
+                                    cursor: pointer
+
+                                @include mixins.firefox-style
+                                    max-width: 3rem
+
+                                
+                        
+                        hr
+                            width: 80%
+                            height: 2px
+                            align-self: center
+                            border-width: 1px 0 0 0
+
+                            @include mixins.medium-devices
+                                display: none
+                                        
+
+                    .active
+                        transform: translateY(0px)
+                        visibility: visible
+                        transition: 1s
+                        display: flex
+                        align-items: flex-start
+                        gap: 1.5rem
+                        max-width: 20rem
+                        float: right
+                                                        
+
+            .active
+                height: 60vh
+                
+
+            .main
+                //SECTION ONE ACIMA
+
+                &-section-one
+                    @include mixins.flex-center
+                    flex-direction: column
+                    text-align: center
+                    gap: 2rem
+                    padding: 8rem 0
+                    max-width: 60rem
+                    margin: 0 auto
+
+                    @include mixins.large-devices
+                        flex-direction: row-reverse
+                        text-align: left
+                        gap: 3rem
+
+                    &-img
+                        @include mixins.large-devices
+                            width: 50%
+                        img
+                            width: 100%
+                            max-width: 30rem
+                            height: auto
+
+                            @include mixins.large-devices
+                                max-width: none
+                            
+                    &-text
+                        @include mixins.flex-center
+                        flex-direction: column
+                        gap: 1rem
+                        @include mixins.large-devices
+                            align-items: flex-start
+                            width: 50%
+                            
+
+                        &-title
+                            color: variables.$very-dark-violet
+                            font-size: 2.25rem
+                            line-height: 2.5rem
+
+                            @include mixins.large-devices
+                                font-size: 3rem
+                                line-height: 3rem
+                            
+
+                        &-paragraph
+                            font-size: 1rem
+                            color: variables.$grayish-violet
+                            max-width: 18rem
+                            @include mixins.large-devices
+                                max-width: 25rem
+
+                        &-button
+                            @include mixins.standard-button
+                            padding: 1.25rem 2rem
+                            font-weight: 500
+
+                            @include mixins.large-devices
+                                margin: 0
+
+                &-section-two
+                    background: variables.$light-gray
+                    @include mixins.flex-center
+                    flex-direction: column
+                    line-height: 1.25rem
+                    padding-bottom: 8rem
+                    
+
+                    &-short
+                        width: 100%
+                        max-width: 60rem
+                        margin: -4rem 2rem 5rem
+
+                        @include mixins.large-devices
+                            margin: -3rem 2rem 5rem 0
+
+                        &-form
+                            background-image: url('/images/bg-shorten-mobile.svg')
+                            background-size: cover
+                            background-repeat: no-repeat
+                            background-color: variables.$dark-violet
+                            background-position-x: 4rem
+                            background-position-y: -2rem
+                            margin: 0 1rem
+                            padding: 1.5rem 0
+                            border-radius: 0.5rem
+                            @include mixins.flex-center
+                            flex-direction: column
+                            gap: 1.5rem
+
+                            @include mixins.medium-devices
+                                background-image: url('/images/bg-shorten-desktop.svg')
+                                background-position-x: 0
+                                background-position-y: 0
+                                flex-direction: row
+                                padding: 2.5rem
+
+                            &-label
+                                width: 100%
+                                text-align: center
+
+                                @include mixins.medium-devices
+                                    width: 85%
+
+                                &-input
+                                    width: 85%
+                                    min-height: 3rem
+                                    padding: 0 1rem
+                                    border-radius: 0.5rem
+                                    color: variables.$grayish-violet
+
+                                    @include mixins.medium-devices
+                                        width: 100%
+
+                                    &::placeholder
+                                        color: variables.$grayish-violet
+                                    
+
+                            &-button
+                                @include mixins.standard-button
+                                width: 85%
+                                border-radius: 0.25rem
+                                padding: 1.5rem 0
+
+                                @include mixins.medium-devices
+                                    width: 15%
+                                    padding: 1rem 0
+                    
+                    
+                    &-text
+                        margin-bottom: 4rem
+                        max-width: 30rem
+
+                        &-content
+                            @include mixins.flex-center
+                            flex-direction: column
+                            text-align: center
+                            gap: 1.5rem
+
+                            &-paragraph
+                                font-size: 0.9rem
+                                color: variables.$grayish-violet
+                    
+
+                    &-cards
+                        @include mixins.large-devices
+                            display: flex
+                            min-height: 270px
+                            
+                            
+                    &-card
+                        @include mixins.flex-center
+                        flex-direction: column
+                        max-width: 20rem
+
+                        @include mixins.large-devices
+                            flex-direction: row
+                            width: 100%
+                            
+
+                        &-content
+                            background: variables.$white
+                            @include mixins.flex-center
+                            flex-direction: column
+                            position: relative
+                            padding: 4rem 1.5rem 2rem
+                            gap: 1rem
+                            text-align: center
+                            border-radius: 0.5rem
+
+                            @include mixins.large-devices
+                                padding: 3rem 1.5rem 2rem
+                                text-align: left
+                                align-items: flex-start
+
+                            &-img
+                                @include mixins.flex-center
+                                background: variables.$dark-violet
+                                width: 100%
+                                max-width: 4rem
+                                height: auto
+                                border-radius: 100%
+                                padding: 1rem
+                                position: absolute
+                                top: -2rem
+
+                                img
+                                    width: 100%
+                                    max-width: 2.5rem
+                                    height: auto
+                                    object-fit: cover
+                            
+                            &-paragraph
+                                font-size: 0.8rem
+                                color: variables.$grayish-violet
+                                
+
+                        hr
+                            min-height: 5rem
+                            width: 0.5rem
+                            background: variables.$cyan
+                            border: none
+
+                            @include mixins.large-devices
+                                @include mixins.flex-center
+                                min-height: 0.5rem
+                                width: 30%
+
+                        &:nth-child(3)
+                            hr
+                                visibility: hidden
+
+                    &-card:nth-child(1)
+                        .main-section-two-card-content
+                            align-self: flex-start
+
+                    &-card:nth-child(3)
+                        .main-section-two-card-content
+                            align-self: flex-end
+
+                &-section-three
+                    @include mixins.flex-center
+                    flex-direction: column
+                    background: red
+                    min-height: 10rem
+                    color: variables.$white
+                    background-color: variables.$dark-violet
+                    background-image: url('/images/bg-boost-mobile.svg')
+                    background-size: cover
+                    background-repeat: no-repeat
+
+                    @include mixins.medium-devices
+                        background-image: url('/images/bg-boost-desktop.svg')
+                        background-size: cover
+                        background-repeat: no-repeat
+                        min-height: 16rem
+
+                    @include mixins.large-devices
+                        min-height: 12rem
+
+                    &-content
+                        @include mixins.flex-center
+                        flex-direction: column
+                        gap: 1rem
+                        
+
+                        &-title
+                            font-size: 1.3rem
+
+                        button
+                            font-size: 1rem
+                            padding: 0.5rem 1.5rem
+                            @include mixins.standard-button
+
+            .footer
+                background: variables.$very-dark-violet
+                @include mixins.flex-center
+                flex-direction: column
+                padding: 3rem 0
+                gap: 2.5rem
+                
+
+                @include mixins.large-devices
+                    flex-direction: row
+                    align-items: flex-start
+                    padding: 3rem 0
+                    gap: 0
+
+                &-first
+    
+                    &-logo
+                        filter: invert(1)
+                        @include mixins.large-devices
+                            width: 20%
+                            padding-left: 2rem
+                        
+                        @include mixins.extra-large-devices
+                            padding-left: 5rem
+
+                        @include mixins.extra-extra-large-devices
+                            padding-left: 12rem
+
+                        img
+                            @include mixins.large-devices
+                                max-width: 5rem
+                            
+
+                    &-list
+                        display: flex
+                        flex-direction: column
+                        @include mixins.large-devices
+                            flex-direction: row
+                            width: 50%
+
+                        @include mixins.extra-large-devices
+                            padding-left: 2rem
+
+                        @include mixins.extra-extra-large-devices
+                            padding-left: 8rem
+                        
+                        &-features  
+                            text-align: center
+                            list-style: none
+                            width: 100%
+                            line-height: 2rem
+
+                            @include mixins.large-devices
+                                text-align: left
+
+                            &-item:first-child
+                                margin-bottom: 1rem
+                                font-weight: bold
+                                pointer-events: none
+                                
+
+
+                        &-resources
+                            text-align: center
+                            list-style: none
+                            width: 100%
+                            line-height: 2rem
+
+                            @include mixins.large-devices
+                                text-align: left
+
+                            &-item:first-child
+                                margin-bottom: 1rem
+                                font-weight: bold
+                                pointer-events: none
+
+                        &-company 
+                            text-align: center
+                            list-style: none
+                            width: 100%
+                            line-height: 2rem
+
+                            @include mixins.large-devices
+                                text-align: left
+
+                            &-item:first-child
+                                margin-bottom: 1rem
+                                font-weight: bold
+                                pointer-events: none
+
+                        &-social
+                            text-align: center
+                            width: 100%
+                            display: flex
+                            gap: 1.5rem
+                            list-style: none
+                            justify-content: center
+                            font-size: 1.5rem
+
+                            @include mixins.medium-devices
+                                gap: 1rem
+                                text-align: left
+                                width: 20%
+                                padding-right:2rem
+
+                            @include mixins.large-devices
+                                padding-right: 7rem
+
+                            @include mixins.extra-large-devices
+                                padding-right: 15rem
+                        
+                        
