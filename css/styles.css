@@ -350,11 +350,11 @@
 * body .container .main-section-two-short {
   width: 100%;
   max-width: 60rem;
-  margin: -4rem 2rem 5rem;
+  margin: -4rem 2rem 0rem;
 }
 @media (min-width: 992px) {
   * body .container .main-section-two-short {
-    margin: -3rem 2rem 5rem 0;
+    margin: -3rem 0rem 1rem 0;
   }
 }
 * body .container .main-section-two-short-form {
@@ -406,6 +406,9 @@
 * body .container .main-section-two-short-form-label-input::placeholder {
   color: #9e9aa7;
 }
+* body .container .main-section-two-short-form-label:invalid {
+  border: solid 1px red;
+}
 * body .container .main-section-two-short-form-button {
   align-items: center;
   background-color: #2acfcf;
@@ -436,8 +439,89 @@
     padding: 1rem 0;
   }
 }
+* body .container .main-section-two-shortened {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+* body .container .main-section-two-shortened-items {
+  background: #fff;
+  margin: 2rem 1rem;
+  list-style: none;
+  border-radius: 0.5rem;
+}
+@media (min-width: 768px) {
+  * body .container .main-section-two-shortened-items {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+}
+* body .container .main-section-two-shortened-items-current {
+  border-bottom: solid 1px #F0F1F6;
+  padding: 1rem;
+  color: #3b3054;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 768px) {
+  * body .container .main-section-two-shortened-items-current {
+    width: 50%;
+    padding: 0;
+    border: none;
+  }
+}
+* body .container .main-section-two-shortened-items-shortened {
+  padding: 1rem 1rem 0;
+  color: #2acfcf;
+}
+@media (min-width: 768px) {
+  * body .container .main-section-two-shortened-items-shortened {
+    width: 35%;
+    padding: 0;
+    text-align: right;
+  }
+}
+* body .container .main-section-two-shortened-items-link {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  * body .container .main-section-two-shortened-items-link {
+    width: 15%;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+* body .container .main-section-two-shortened-items-link-button {
+  font-size: 1rem;
+  font-weight: bold;
+  height: 2.5rem;
+  color: #fff;
+  background: #2acfcf;
+  border: none;
+  border-radius: 0.25rem;
+  width: calc(100% - 1.5rem);
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  * body .container .main-section-two-shortened-items-link-button {
+    width: 85%;
+    margin-right: 0;
+  }
+}
+* body .container .main-section-two-shortened-items-link-button:hover {
+  transition: 0.4s;
+  opacity: 0.5;
+}
 * body .container .main-section-two-text {
-  margin-bottom: 4rem;
+  margin: 5rem 0 4rem;
   max-width: 30rem;
 }
 * body .container .main-section-two-text-content {

@@ -273,10 +273,10 @@
                     &-short
                         width: 100%
                         max-width: 60rem
-                        margin: -4rem 2rem 5rem
+                        margin: -4rem 2rem 0rem
 
                         @include mixins.large-devices
-                            margin: -3rem 2rem 5rem 0
+                            margin: -3rem 0rem 1rem 0
 
                         &-form
                             background-image: url('/images/bg-shorten-mobile.svg')
@@ -318,6 +318,9 @@
 
                                     &::placeholder
                                         color: variables.$grayish-violet
+
+                                &:invalid
+                                    border: solid 1px red
                                     
 
                             &-button
@@ -330,9 +333,81 @@
                                     width: 15%
                                     padding: 1rem 0
                     
-                    
+                    &-shortened
+                        width: 100%
+                        max-width: 60rem
+                        margin: 0 auto
+
+                        &-items
+                            background: variables.$white
+                            margin: 2rem 1rem
+                            list-style: none
+                            border-radius: 0.5rem
+
+                            @include mixins.medium-devices
+                                display: flex
+                                align-items: center
+                                padding: 1rem 1.5rem
+
+                            &-current
+                                border-bottom: solid 1px variables.$light-gray
+                                padding: 1rem
+                                color: variables.$dark-violet
+                                overflow: hidden
+                                
+                                text-overflow: ellipsis
+
+                                @include mixins.medium-devices
+                                    width: 50%
+                                    padding: 0
+                                    border: none
+                            &-shortened
+                                padding: 1rem 1rem 0 
+                                color: variables.$cyan
+
+                                @include mixins.medium-devices
+                                    width: 35%
+                                    padding: 0
+                                    text-align: right
+
+                            &-link
+                                padding: 0 1rem
+
+                                @include mixins.medium-devices
+                                    width: 15%
+                                    padding: 0
+                                    display: flex
+                                    align-items: flex-end
+
+                                &-button
+                                    font-size: 1rem
+                                    font-weight: bold
+                                    height: 2.5rem
+                                    color: variables.$white
+                                    background: variables.$cyan
+                                    border: none
+                                    border-radius: 0.25rem
+                                    width: calc( 100% - 1.5rem )
+                                    align-items: center
+                                    cursor: pointer
+                                    display: flex
+                                    height: 2.5rem
+                                    justify-content: center
+                                    margin: auto
+                                    text-align: center
+
+                                    @include mixins.medium-devices
+                                        width: 85%
+                                        margin-right: 0
+
+                                    &:hover
+                                        transition: .4s
+                                        opacity: 0.5
+                                    
+                                
+
                     &-text
-                        margin-bottom: 4rem
+                        margin: 5rem 0 4rem
                         max-width: 30rem
 
                         &-content

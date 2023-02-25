@@ -5,9 +5,9 @@ const navMenu = document.getElementById("header-nav-list");
 //código para que, no evento de clique no ícone do menu hamburger, o menu possa ser mostrado e também recolhido
 
 hamburguerIcon.addEventListener("click", () => {
-   
+
     header.classList.toggle("active");
-    
+
     //quando o header está ativo
 
     if (header.classList.contains("active")) {
@@ -23,26 +23,30 @@ hamburguerIcon.addEventListener("click", () => {
     }
 });
 
-/*const form = document.getElementById("form");
+const form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     encurtarUrl();
 
+    setTimeout(() => {
+        form.reset();
+    }, 1500);
+
 })
 
 function encurtarUrl() {
     //validar se a url existe
     let url = document.getElementById("input-url").value;
-    
+
     try {
         let urlValida = new URL(url)
         console.log("Valid URL!")
-      } catch(err) {
-          console.log("Invalid URL!")
-          return
-      }
+    } catch (err) {
+        console.log("Invalid URL!")
+        return
+    }
 
 
     //encurtador de links
@@ -65,32 +69,56 @@ function encurtarUrl() {
         .then(json => {
             /*let input = document.getElementById("input-url");
             input.value = json.shortUrl;*/
-/*
-            let listaDeUrls = document.getElementById("urls-encurtadas");
 
-            let urlAntesEncurtar = document.createElement("li");
-            urlAntesEncurtar.innerText = document.getElementById("input-url").value;
+            let urlsList = document.getElementById("main-section-two-shortened");
 
-            let urlEncurtada = document.createElement("li");
-            urlEncurtada.innerText = json.shortUrl;
+            let urlBeforeShorten = document.createElement("li");
+            urlBeforeShorten.classList.add("main-section-two-shortened-items-current")
+            urlBeforeShorten.innerText = document.getElementById("input-url").value;
 
-            let botaoCopiarUrl = document.createElement("button");
-            botaoCopiarUrl.classList.add("button");
-            botaoCopiarUrl.innerText = "Copy";
+            let urlShortened = document.createElement("li");
+            urlShortened.classList.add("main-section-two-shortened-items-shortened")
+            urlShortened.innerText = json.shortUrl;
+
+            let linkDivCopyUrl = document.createElement("a");
+            linkDivCopyUrl.classList.add("main-section-two-shortened-items-link");
+
+            let buttonCopyUrl = document.createElement("button");
+            buttonCopyUrl.classList.add("main-section-two-shortened-items-link-button");
+            /*buttonCopyUrl.setAttribute("onclick","copyShortenedLink()");*/
+            buttonCopyUrl.innerText = "Copy";
 
             let divUrl = document.createElement("ul");
-            divUrl.classList.add("urls-encurtadas-items")
+            divUrl.classList.add("main-section-two-shortened-items");
 
-            urlEncurtada.appendChild(botaoCopiarUrl);
+            linkDivCopyUrl.appendChild(buttonCopyUrl)
 
-            divUrl.appendChild(urlAntesEncurtar);
-            divUrl.appendChild(urlEncurtada);
-            
+            divUrl.appendChild(urlBeforeShorten);
+            divUrl.appendChild(urlShortened);
+            divUrl.appendChild(linkDivCopyUrl);
 
-            listaDeUrls.appendChild(divUrl);
+            urlsList.appendChild(divUrl);
+
+            const buttonsCopy = document.querySelectorAll(".main-section-two-shortened-items-link-button");
+
+            buttonsCopy.forEach((button) => {
+                button.addEventListener("click", (event) => {
+                    let clickedButtonDiv = event.target;
+                    let shortenedUrlCopy = clickedButtonDiv.parentNode.parentNode.children[1].innerText;
+                    
+                    navigator.clipboard.writeText(shortenedUrlCopy);
+                    button.innerText = "Copied!"
+                    button.style.background = "#3b3054";
+                })
+            })
+
         });
 }
-*/
+
+
+
+
+
 
 let lastScrollTop = 0;
 
@@ -106,4 +134,3 @@ window.addEventListener('scroll', function (e) {
     lastScrollTop = this.scrollY;
 })
 
- 
