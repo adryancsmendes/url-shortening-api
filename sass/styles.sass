@@ -6,7 +6,9 @@
     margin: 0
     padding: 0
     box-sizing: border-box
-
+    scroll-behavior: smooth
+    scroll-margin: 8rem
+   
     body
         min-height: 100vh
 
@@ -303,6 +305,22 @@
                                 width: 100%
                                 text-align: center
 
+                                &-error
+                                    position: relative
+                                    &:after
+                                        content: "Please enter a valid URL!"
+                                        position: absolute
+                                        text-align: left
+                                        color: variables.$red
+                                        display: block
+                                        font-size: 0.8rem
+                                        width: 85%
+                                        margin-left: 8%
+                                        
+                                        @include mixins.medium-devices
+                                            width: 100%
+                                            margin-left: 0
+
                                 @include mixins.medium-devices
                                     width: 85%
 
@@ -319,19 +337,29 @@
                                     &::placeholder
                                         color: variables.$grayish-violet
 
-                                &:invalid
-                                    border: solid 1px red
+                                    &-error
+                                        border: solid 3px variables.$red
+
+                                        &::placeholder
+                                            color: variables.$red
+                                        
                                     
+                                    
+                                
 
                             &-button
                                 @include mixins.standard-button
                                 width: 85%
                                 border-radius: 0.25rem
                                 padding: 1.5rem 0
+                                margin-top: 0.5rem
 
                                 @include mixins.medium-devices
                                     width: 15%
                                     padding: 1rem 0
+                                    
+                                @include mixins.large-devices
+                                    margin: 0
                     
                     &-shortened
                         width: 100%

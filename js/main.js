@@ -23,6 +23,8 @@ hamburguerIcon.addEventListener("click", () => {
     }
 });
 
+
+//codigo para formulario
 const form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
@@ -38,13 +40,21 @@ form.addEventListener("submit", (e) => {
 
 function encurtarUrl() {
     //validar se a url existe
-    let url = document.getElementById("input-url").value;
-
+    let url = document.getElementById("input-url");
+    let labelUrl = document.getElementById("label-url");
     try {
-        let urlValida = new URL(url)
+        let urlValida = new URL(url.value)
         console.log("Valid URL!")
+        if(url.classList.contains("main-section-two-short-form-label-input-error") && labelUrl.classList.contains("main-section-two-short-form-label-error")){
+            url.classList.remove("main-section-two-short-form-label-input-error");
+            labelUrl.classList.remove("main-section-two-short-form-label-error")
+            }
     } catch (err) {
         console.log("Invalid URL!")
+        if(!url.classList.contains("main-section-two-short-form-label-input-error") && !labelUrl.classList.contains("main-section-two-short-form-labelerror")){
+        url.classList.add("main-section-two-short-form-label-input-error");
+        labelUrl.classList.add("main-section-two-short-form-label-error")
+        }
         return
     }
 

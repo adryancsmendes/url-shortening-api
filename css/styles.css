@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-margin: 8rem;
 }
 * body {
   min-height: 100vh;
@@ -386,6 +388,25 @@
   width: 100%;
   text-align: center;
 }
+* body .container .main-section-two-short-form-label-error {
+  position: relative;
+}
+* body .container .main-section-two-short-form-label-error:after {
+  content: "Please enter a valid URL!";
+  position: absolute;
+  text-align: left;
+  color: #f46262;
+  display: block;
+  font-size: 0.8rem;
+  width: 85%;
+  margin-left: 8%;
+}
+@media (min-width: 768px) {
+  * body .container .main-section-two-short-form-label-error:after {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 @media (min-width: 768px) {
   * body .container .main-section-two-short-form-label {
     width: 85%;
@@ -406,8 +427,11 @@
 * body .container .main-section-two-short-form-label-input::placeholder {
   color: #9e9aa7;
 }
-* body .container .main-section-two-short-form-label:invalid {
-  border: solid 1px red;
+* body .container .main-section-two-short-form-label-input-error {
+  border: solid 3px #f46262;
+}
+* body .container .main-section-two-short-form-label-input-error::placeholder {
+  color: #f46262;
 }
 * body .container .main-section-two-short-form-button {
   align-items: center;
@@ -426,6 +450,7 @@
   width: 85%;
   border-radius: 0.25rem;
   padding: 1.5rem 0;
+  margin-top: 0.5rem;
 }
 * body .container .main-section-two-short-form-button:hover {
   transition: 0.4s;
@@ -437,6 +462,11 @@
   * body .container .main-section-two-short-form-button {
     width: 15%;
     padding: 1rem 0;
+  }
+}
+@media (min-width: 992px) {
+  * body .container .main-section-two-short-form-button {
+    margin: 0;
   }
 }
 * body .container .main-section-two-shortened {
