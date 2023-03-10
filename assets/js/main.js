@@ -31,13 +31,11 @@ function shortenUrl() {
         const urlObj = new URL(url.value);
     } catch (err) {
         // shows error message if url is invalid
-        url.setCustomValidity("Invalid URL!");
         addErrorClass(url, labelUrl);
-        url.reportValidity();
         return;
     }
     // if the URL is valid, remove the error message and remove the error class
-    url.setCustomValidity("");
+
     removeErrorClass(url, labelUrl);
     // object that will be sent in the request
     const linkRequest = {
