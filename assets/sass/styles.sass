@@ -32,10 +32,14 @@
                 position: fixed
                 z-index: 999
                 max-width: variables.$container-width
-
+                background-color: variables.$white
+                max-height: 6rem
                 
+                @include mixins.medium-devices
+                    max-height: 10rem
+
                 &-nav
-                    padding: 3rem 1.5rem 0.5rem
+                    padding: 1.5rem 1.5rem 0.5rem
                     
 
                     @include mixins.medium-devices
@@ -196,14 +200,16 @@
                         gap: 1.5rem
                         max-width: 20rem
                         float: right
-                                                        
+
+                        @include mixins.tablet-devices
+                            max-width: 17rem                                   
 
             .active
                 height: 60vh
                 
 
             .main
-                //SECTION ONE ACIMA
+                //SECTION ONE
 
                 &-section-one
                     @include mixins.flex-center
@@ -281,7 +287,7 @@
                             margin: -3rem 0rem 1rem 0
 
                         &-form
-                            background-image: url('/images/bg-shorten-mobile.svg')
+                            background-image: url('/assets/images/bg-shorten-mobile.svg')
                             background-size: cover
                             background-repeat: no-repeat
                             background-color: variables.$dark-violet
@@ -295,7 +301,7 @@
                             gap: 1.5rem
 
                             @include mixins.medium-devices
-                                background-image: url('/images/bg-shorten-desktop.svg')
+                                background-image: url('/assets/images/bg-shorten-desktop.svg')
                                 background-position-x: 0
                                 background-position-y: 0
                                 flex-direction: row
@@ -532,12 +538,12 @@
                     min-height: 10rem
                     color: variables.$white
                     background-color: variables.$dark-violet
-                    background-image: url('/images/bg-boost-mobile.svg')
+                    background-image: url('/assets/images/bg-boost-mobile.svg')
                     background-size: cover
                     background-repeat: no-repeat
 
                     @include mixins.medium-devices
-                        background-image: url('/images/bg-boost-desktop.svg')
+                        background-image: url('/assets/images/bg-boost-desktop.svg')
                         background-size: cover
                         background-repeat: no-repeat
                         min-height: 16rem

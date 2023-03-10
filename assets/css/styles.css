@@ -30,9 +30,16 @@
   position: fixed;
   z-index: 999;
   max-width: 1440px;
+  background-color: #fff;
+  max-height: 6rem;
+}
+@media (min-width: 768px) {
+  * body .container .header {
+    max-height: 10rem;
+  }
 }
 * body .container .header-nav {
-  padding: 3rem 1.5rem 0.5rem;
+  padding: 1.5rem 1.5rem 0.5rem;
 }
 @media (min-width: 768px) {
   * body .container .header-nav {
@@ -242,6 +249,11 @@
   max-width: 20rem;
   float: right;
 }
+@media (min-width: 480px) {
+  * body .container .header-nav .active {
+    max-width: 17rem;
+  }
+}
 * body .container .active {
   height: 60vh;
 }
@@ -360,7 +372,7 @@
   }
 }
 * body .container .main-section-two-short-form {
-  background-image: url("/images/bg-shorten-mobile.svg");
+  background-image: url("/assets/images/bg-shorten-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #3b3054;
@@ -377,7 +389,7 @@
 }
 @media (min-width: 768px) {
   * body .container .main-section-two-short-form {
-    background-image: url("/images/bg-shorten-desktop.svg");
+    background-image: url("/assets/images/bg-shorten-desktop.svg");
     background-position-x: 0;
     background-position-y: 0;
     flex-direction: row;
@@ -660,13 +672,13 @@
   min-height: 10rem;
   color: #fff;
   background-color: #3b3054;
-  background-image: url("/images/bg-boost-mobile.svg");
+  background-image: url("/assets/images/bg-boost-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   * body .container .main-section-three {
-    background-image: url("/images/bg-boost-desktop.svg");
+    background-image: url("/assets/images/bg-boost-desktop.svg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 16rem;
