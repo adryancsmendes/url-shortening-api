@@ -60,7 +60,7 @@
 }
 @media (min-width: 1440px) {
   * body .container .header-nav {
-    padding: 4rem 10rem 0.5rem;
+    padding: 4rem 10rem 1rem;
   }
 }
 * body .container .header-nav-logo {
@@ -71,18 +71,20 @@
   justify-content: space-between;
 }
 * body .container .header-nav-logo a {
+  color: #232127;
   max-width: 8rem;
   display: flex;
-  align-item: center;
+  align-items: center;
 }
 @media (min-width: 480px) {
   * body .container .header-nav-logo a {
     max-width: 10rem;
   }
 }
-* body .container .header-nav-logo a img:first-child {
-  width: 100%;
-  height: auto;
+@media (min-width: 768px) {
+  * body .container .header-nav-logo a {
+    font-size: 1.5rem;
+  }
 }
 * body .container .header-nav-logo #menu-hamburguer {
   filter: invert(0.5);

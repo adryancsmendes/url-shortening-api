@@ -1,7 +1,6 @@
 //Header elements
 const header = document.getElementById("header");
 const hamburguerIcon = document.getElementById("menu-hamburguer");
-const logo = document.getElementById("header-nav-logo-img");
 const navMenu = document.getElementById("header-nav-list");
 
 

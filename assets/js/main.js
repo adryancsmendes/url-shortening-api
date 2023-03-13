@@ -34,9 +34,10 @@ function shortenUrl() {
         addErrorClass(url, labelUrl);
         return;
     }
-    // if the URL is valid, remove the error message and remove the error class
 
+    // if the URL is valid, remove the error message and remove the error class
     removeErrorClass(url, labelUrl);
+
     // object that will be sent in the request
     const linkRequest = {
         destination: url.value,
@@ -82,13 +83,13 @@ function createElement(item) {
     // Retrieves the unordered list element where the new list item will be appended to
     const urlsList = document.getElementById("main-section-two-shortened");
 
-    // Creates a new list item element for the URL before shortening
-    const urlBeforeShortenElement = document.createElement("li");
+    // Creates a new div element for the URL before shortening
+    const urlBeforeShortenElement = document.createElement("div");
     urlBeforeShortenElement.classList.add("main-section-two-shortened-items-current")
     urlBeforeShortenElement.innerText = item.urlBeforeShorten;
 
-    // Creates a new list item element for the shortened URL
-    const urlShortenedElement = document.createElement("li");
+    // Creates a new div element for the shortened URL
+    const urlShortenedElement = document.createElement("div");
     urlShortenedElement.classList.add("main-section-two-shortened-items-shortened")
     urlShortenedElement.innerText = item.shortenedUrl;
 
@@ -103,19 +104,19 @@ function createElement(item) {
     // Sets the shortened URL as a data attribute on the copy button element
     buttonCopyUrl.setAttribute("data-shortened-url", item.shortenedUrl);
 
-    // Creates a new <ul> element to contain the list items and copy button
-    const divUrl = document.createElement("ul");
+    // Creates a new <li> element to contain the div items and copy button
+    const divUrl = document.createElement("li");
     divUrl.classList.add("main-section-two-shortened-items");
 
     // Appends the copy button to the <a> element
     linkDivCopyUrl.appendChild(buttonCopyUrl)
 
-    // Appends the URL before shortening, shortened URL, and copy button to the <ul> element
+    // Appends the URL before shortening, shortened URL, and copy button to the <li> element
     divUrl.appendChild(urlBeforeShortenElement);
     divUrl.appendChild(urlShortenedElement);
     divUrl.appendChild(linkDivCopyUrl);
 
-    // Appends the <ul> element to the unordered list
+    // Appends the <li> element to the <ul>
     urlsList.appendChild(divUrl);
 
 }

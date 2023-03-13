@@ -54,7 +54,7 @@
                         padding: 4rem 5rem 0.5rem
 
                     @include mixins.extra-extra-large-devices
-                        padding: 4rem 10rem 0.5rem
+                        padding: 4rem 10rem 1rem
 
                     &-logo
                         margin-bottom: 1rem
@@ -62,16 +62,16 @@
                         justify-content: space-between
 
                         a
+                            color: variables.$very-dark-violet
                             max-width: 8rem
                             display: flex
-                            align-item: center
+                            align-items: center
 
                             @include mixins.tablet-devices
                                 max-width: 10rem
-                            
-                            img:first-child
-                                width: 100%
-                                height: auto
+
+                            @include mixins.medium-devices
+                                font-size: 1.5rem
 
                         #menu-hamburguer
                             filter: invert(0.5)
